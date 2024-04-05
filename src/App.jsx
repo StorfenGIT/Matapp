@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import Search from './components/search';
-import MealDetails from './components/mealdetails';
-import './App.css';
+import NavCategory from './components/Homepage';
+import Searchbar from './components/Searchfunction';
+import Pages from './pages/Routes';
+import './App.css'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-  const [selectedMeal, setSelectedMeal] = useState(null);
-
   return (
-    <div className="App">
-      <h1>Meal Search App</h1>
-      <Search onSelectMeal={setSelectedMeal} />
-      <MealDetails meal={selectedMeal} />
-    </div>
-  );
+    <BrowserRouter> 
+    <Searchbar />
+    <NavCategory /> 
+    <Pages />
+   </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
